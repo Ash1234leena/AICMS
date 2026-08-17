@@ -1,0 +1,873 @@
+/* ================================
+   SMARTBUS STUDENT DASHBOARD
+   ================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.student-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #0d0018;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* ================================
+   SIDEBAR
+   ================================ */
+
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient(
+    180deg,
+    #21083b 0%,
+    #10001f 100%
+  );
+
+  border-right: 1px solid #6f2cff;
+
+  padding: 35px 20px;
+
+  z-index: 100;
+}
+
+
+/* LOGO / BRAND */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 10px 35px;
+}
+
+.brand-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #8b2cff,
+    #c43cff
+  );
+
+  font-size: 30px;
+
+  box-shadow:
+    0 0 20px rgba(163, 52, 255, 0.6);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.brand p {
+  margin: 5px 0 0;
+
+  font-size: 11px;
+  letter-spacing: 4px;
+
+  color: #c184ff;
+}
+
+
+/* ================================
+   MENU
+   ================================ */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 18px;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 15px;
+
+  color: #bdb0ca;
+
+  font-size: 16px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.menu-item:hover {
+  background: rgba(157, 55, 255, 0.15);
+  color: white;
+}
+
+.menu-item.active {
+  background: linear-gradient(
+    90deg,
+    #5520a3,
+    #321151
+  );
+
+  color: white;
+
+  border-left: 4px solid #b84cff;
+
+  box-shadow:
+    0 0 20px rgba(163, 52, 255, 0.25);
+}
+
+.menu-item span {
+  white-space: nowrap;
+}
+
+
+/* ================================
+   MAIN CONTENT
+   ================================ */
+
+.main-content {
+  margin-left: 280px;
+
+  width: calc(100% - 280px);
+
+  min-height: 100vh;
+
+  padding: 50px;
+
+  overflow-x: hidden;
+}
+
+
+/* ================================
+   HEADER
+   ================================ */
+
+.dashboard-header {
+  margin-bottom: 35px;
+}
+
+.small-heading {
+  margin: 0 0 10px;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  color: #a96cff;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  font-size: 36px;
+}
+
+.subtitle {
+  color: #9588a5;
+}
+
+
+/* ================================
+   BUS CARD
+   ================================ */
+
+.bus-card {
+  width: 100%;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #1b092c,
+    #10001d
+  );
+
+  border: 1px solid #55247a;
+
+  box-shadow:
+    0 0 30px rgba(120, 40, 255, 0.12);
+
+  margin-bottom: 35px;
+}
+
+.bus-card h2 {
+  margin: 5px 0 30px;
+
+  font-size: 30px;
+}
+
+
+/* ROUTE */
+
+.bus-route {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.bus-route > div {
+  flex: 1;
+}
+
+.bus-route p {
+  font-size: 17px;
+
+  margin: 8px 0;
+}
+
+.bus-route small {
+  color: #8f819d;
+}
+
+
+/* DOT */
+
+.route-dot {
+  display: block;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #b73cff;
+
+  box-shadow:
+    0 0 12px #b73cff;
+}
+
+
+/* LINE */
+
+.route-line {
+  flex: 2 !important;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #8b2cff,
+    #ff4dc4
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+
+/* TRACK BUTTON */
+
+.track-button {
+  width: 100%;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid #913cff;
+
+  background: rgba(116, 35, 180, 0.15);
+
+  color: #d9b7ff;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.track-button:hover {
+  background: rgba(145, 60, 255, 0.3);
+}
+
+
+/* ================================
+   QUICK ACTIONS
+   ================================ */
+
+.quick-section h2 {
+  margin-top: 5px;
+
+  font-size: 25px;
+}
+
+.quick-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(250px, 1fr));
+
+  gap: 20px;
+
+  margin-top: 25px;
+}
+
+.quick-card {
+  min-height: 150px;
+
+  padding: 25px;
+
+  text-align: left;
+
+  border-radius: 18px;
+
+  border: 1px solid #44205d;
+
+  background: #160622;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.quick-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #a13cff;
+
+  box-shadow:
+    0 0 20px rgba(161, 60, 255, 0.25);
+}
+
+.quick-icon {
+  font-size: 28px;
+
+  margin-bottom: 15px;
+}
+
+.quick-card h3 {
+  margin: 0 0 7px;
+
+  font-size: 17px;
+}
+
+.quick-card p {
+  margin: 0;
+
+  color: #81738d;
+
+  font-size: 13px;
+}
+
+
+/* ================================
+   BACK BUTTON
+   ================================ */
+
+.back-button {
+  margin-bottom: 30px;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  border: 1px solid #8738d8;
+
+  background: #1c082d;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+.back-button:hover {
+  background: #351052;
+}
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+
+    width: calc(100% - 220px);
+
+    padding: 30px;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+/* TABLETS */
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    padding: 25px 12px;
+  }
+
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 30px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .menu-item {
+    padding: 14px 12px;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+   PHONES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .student-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+
+  /* SIDEBAR BECOMES TOP BAR */
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+    min-width: 100%;
+
+    height: auto;
+
+    padding: 15px;
+
+    border-right: none;
+
+    border-bottom: 1px solid #6f2cff;
+  }
+
+
+  /* BRAND */
+
+  .brand {
+    padding: 5px 10px 15px;
+
+    justify-content: center;
+  }
+
+  .brand-icon {
+    width: 45px;
+    height: 45px;
+
+    font-size: 22px;
+
+    border-radius: 13px;
+  }
+
+  .brand h1 {
+    font-size: 21px;
+  }
+
+  .brand p {
+    font-size: 9px;
+  }
+
+
+  /* MOBILE MENU */
+
+  .sidebar nav {
+
+    display: flex;
+
+    flex-direction: row;
+
+    overflow-x: auto;
+
+    gap: 8px;
+
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+  }
+
+  .sidebar nav::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .menu-item {
+
+    flex: 0 0 auto;
+
+    width: auto;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    border-left: none !important;
+  }
+
+
+  .menu-item.active {
+
+    border-bottom: 3px solid #b84cff;
+
+    border-left: none !important;
+  }
+
+
+  /* MAIN CONTENT */
+
+  .main-content {
+
+    margin-left: 0;
+
+    width: 100%;
+
+    min-height: calc(100vh - 150px);
+
+    padding: 20px 15px;
+
+    overflow-x: hidden;
+  }
+
+
+  /* HEADER */
+
+  .dashboard-header {
+    margin-bottom: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 27px;
+
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+
+  /* BUS CARD */
+
+  .bus-card {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+  }
+
+  .bus-card h2 {
+    font-size: 25px;
+
+    margin-bottom: 25px;
+  }
+
+
+  /* BUS ROUTE */
+
+  .bus-route {
+
+    gap: 10px;
+
+    align-items: center;
+  }
+
+  .bus-route p {
+    font-size: 14px;
+  }
+
+  .bus-route small {
+    font-size: 10px;
+  }
+
+  .route-line {
+    font-size: 22px;
+  }
+
+
+  /* QUICK ACTIONS */
+
+  .quick-section h2 {
+    font-size: 22px;
+  }
+
+  .quick-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .quick-card {
+
+    min-height: 120px;
+
+    padding: 20px;
+  }
+
+
+  /* BACK BUTTON */
+
+  .back-button {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+  .brand {
+    justify-content: flex-start;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    padding: 9px 11px;
+
+    font-size: 12px;
+  }
+
+  .main-content {
+    padding: 15px 10px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .bus-card {
+    padding: 16px;
+  }
+
+  .bus-route {
+    gap: 5px;
+  }
+}
+/* =========================================
+   TABLET / iPAD
+   ========================================= */
+
+@media (min-width: 601px) and (max-width: 1100px) {
+
+  .student-layout {
+    width: 100%;
+  }
+
+  /* SIDEBAR */
+
+  .sidebar {
+    width: 210px;
+    min-width: 210px;
+
+    padding: 25px 12px;
+  }
+
+  .brand {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 24px;
+  }
+
+  .brand h1 {
+    font-size: 19px;
+  }
+
+  .brand p {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+
+  /* MENU */
+
+  .menu-item {
+    padding: 13px 12px;
+
+    font-size: 13px;
+
+    gap: 12px;
+  }
+
+
+  /* MAIN CONTENT */
+
+  .main-content {
+    margin-left: 210px;
+
+    width: calc(100% - 210px);
+
+    padding: 35px 25px;
+  }
+
+
+  /* HEADER */
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+
+  /* BUS CARD */
+
+  .bus-card {
+    padding: 25px;
+  }
+
+
+  /* QUICK ACTIONS */
+
+  .quick-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+  }
+
+  .quick-card {
+    min-height: 135px;
+
+    padding: 20px;
+  }
+}
+
+
+/* =========================================
+   TABLET PORTRAIT
+   ========================================= */
+
+@media (min-width: 601px) and (max-width: 800px) {
+
+  .sidebar {
+    width: 180px;
+    min-width: 180px;
+  }
+
+  .main-content {
+    margin-left: 180px;
+
+    width: calc(100% - 180px);
+
+    padding: 25px 20px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 20px;
+  }
+
+  .brand h1 {
+    font-size: 17px;
+  }
+
+  .menu-item {
+    font-size: 12px;
+
+    padding: 12px 8px;
+  }
+
+  .menu-item span {
+    font-size: 12px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 26px;
+  }
+
+  .bus-route {
+    gap: 12px;
+  }
+
+  .quick-card {
+    padding: 16px;
+  }
+}

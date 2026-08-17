@@ -1,0 +1,530 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(168, 85, 247, 0.28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(124, 58, 237, 0.25),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #07020d,
+      #130522,
+      #08030f
+    );
+
+  font-family: Arial, sans-serif;
+
+  color: white;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 300px;
+  height: 300px;
+
+  background: rgba(168, 85, 247, 0.15);
+
+  top: -120px;
+  left: -100px;
+}
+
+.glow-two {
+  width: 300px;
+  height: 300px;
+
+  background: rgba(124, 58, 237, 0.15);
+
+  bottom: -120px;
+  right: -100px;
+}
+
+.glow-three {
+  width: 180px;
+  height: 180px;
+
+  background: rgba(192, 132, 252, 0.08);
+
+  top: 45%;
+  right: 10%;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 430px;
+
+  max-width: 100%;
+
+  padding: 38px 40px 28px;
+
+  position: relative;
+
+  z-index: 2;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(35, 17, 55, 0.94),
+      rgba(12, 5, 22, 0.96)
+    );
+
+  border: 1px solid rgba(168, 85, 247, 0.25);
+
+  box-shadow:
+    0 0 45px rgba(168, 85, 247, 0.15),
+    0 25px 80px rgba(0, 0, 0, 0.6);
+
+  backdrop-filter: blur(25px);
+}
+
+
+/* =========================
+   COLLEGE LOGO
+========================= */
+
+.college-logo-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.college-logo {
+  width: 75px;
+  height: 75px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 14px rgba(168, 85, 247, 0.55)
+    );
+}
+
+
+/* =========================
+   SMARTBUS BRAND
+========================= */
+
+.smartbus-brand {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.bus-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-size: 21px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #6d28d9
+    );
+
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+.smartbus-brand h1 {
+  margin: 0;
+
+  font-size: 26px;
+}
+
+.smartbus-brand p {
+  margin: 4px 0 0;
+
+  color: #b47aff;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.login-divider {
+  height: 1px;
+
+  margin: 25px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(168, 85, 247, 0.4),
+      transparent
+    );
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.login-heading {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.login-heading h2 {
+  margin: 0;
+
+  font-size: 22px;
+}
+
+.login-heading p {
+  margin: 8px 0 0;
+
+  color: #91879b;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   ROLE
+========================= */
+
+.role-section {
+  margin-bottom: 20px;
+}
+
+.role-section > label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #8e8398;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  font-weight: bold;
+}
+
+.role-buttons {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.role-button {
+  height: 58px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.025);
+
+  color: #958b9f;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-size: 11px;
+
+  transition: 0.25s;
+}
+
+.role-button:hover {
+  color: white;
+
+  border-color:
+    rgba(168, 85, 247, 0.4);
+
+  background:
+    rgba(168, 85, 247, 0.08);
+}
+
+.role-button.active {
+  color: white;
+
+  border-color:
+    rgba(168, 85, 247, 0.7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168, 85, 247, 0.2),
+      rgba(109, 40, 217, 0.08)
+    );
+
+  box-shadow:
+    0 0 22px rgba(168, 85, 247, 0.12);
+}
+
+.role-icon {
+  font-size: 17px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+  margin-bottom: 17px;
+}
+
+.input-group > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #aaa0b4;
+
+  font-size: 10px;
+
+  font-weight: bold;
+}
+
+.input-wrapper {
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(0,0,0,0.2);
+
+  transition: 0.2s;
+}
+
+.input-wrapper:focus-within {
+  border-color:
+    rgba(168, 85, 247, 0.75);
+
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.12);
+}
+
+.input-wrapper > span {
+  color: #a855f7;
+
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+.input-wrapper input::placeholder {
+  color: #61586b;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-button {
+  width: 100%;
+
+  height: 50px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9333ea,
+      #7c3aed,
+      #a855f7
+    );
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.28);
+
+  transition: 0.25s;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 38px rgba(168, 85, 247, 0.45);
+}
+
+.login-arrow {
+  font-size: 17px;
+}
+
+
+/* =========================
+   SECURITY
+========================= */
+
+.security-message {
+  margin-top: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #766d7d;
+}
+
+.security-message span {
+  font-size: 12px;
+}
+
+.security-message p {
+  margin: 0;
+
+  font-size: 8px;
+}
+
+
+/* =========================
+   COLLEGE NAME
+========================= */
+
+.college-name {
+  text-align: center;
+
+  margin: 17px 0 0;
+
+  color: #514957;
+
+  font-size: 8px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+  .login-page {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 30px 24px 24px;
+  }
+
+  .college-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+}

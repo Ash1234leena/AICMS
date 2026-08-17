@@ -1,0 +1,587 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6f8;
+  color: #173b52;
+}
+
+/* HEADER */
+
+.top-bar {
+  background: #103f59;
+  color: white;
+  padding: 18px 35px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.top-bar p {
+  margin: 4px 0 0;
+  opacity: 0.8;
+}
+
+.bus-info {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+/* MAIN */
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 45px;
+  padding: 35px;
+}
+
+
+/* BUS SECTION */
+
+.bus-section {
+  text-align: center;
+}
+
+.bus-section h2 {
+  margin-bottom: 5px;
+}
+
+.instruction {
+  color: #718391;
+}
+
+
+/* BUS */
+
+.bus {
+  width: 650px;
+
+  margin: 25px auto;
+
+  padding: 25px 28px 30px;
+
+  background: white;
+
+  border: 5px solid #244c63;
+
+  border-radius: 55px 55px 30px 30px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* DRIVER */
+
+.driver-area {
+  height: 70px;
+
+  background: #e8eef2;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  font-weight: bold;
+
+  color: #526875;
+
+  margin-bottom: 20px;
+}
+
+.steering-wheel {
+  font-size: 25px;
+}
+
+
+/* GIRLS / BOYS */
+
+.gender-title {
+  text-align: center;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  margin: 8px 0 12px;
+}
+
+.girls-title {
+  color: #d85889;
+}
+
+
+/* NORMAL ROW
+   2 SEATS | PATHWAY | 3 SEATS
+*/
+
+.seat-row {
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    70px
+    3fr;
+
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+
+/* TWO SEATER */
+
+.two-seater {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 6px;
+}
+
+
+/* PATHWAY */
+
+.pathway {
+  height: 60px;
+}
+
+
+/* THREE SEATER */
+
+.three-seater {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 6px;
+}
+
+
+/* =========================
+   REAL BUS SEAT
+========================= */
+
+.seat {
+  position: relative;
+
+  width: 100%;
+  height: 62px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  transition: 0.15s ease;
+}
+
+
+/* BACKREST */
+
+.seat-back {
+  position: absolute;
+
+  top: 2px;
+
+  width: 78%;
+  height: 38px;
+
+  border-radius: 12px 12px 5px 5px;
+
+  background: #b9dce9;
+
+  border: 2px solid #79b7ce;
+
+  box-shadow:
+    inset 0 3px 4px rgba(255, 255, 255, 0.5);
+}
+
+
+/* CUSHION */
+
+.seat-cushion {
+  position: relative;
+
+  width: 90%;
+  height: 26px;
+
+  border-radius: 5px 5px 10px 10px;
+
+  background: #d9eef8;
+
+  border: 2px solid #79b7ce;
+
+  color: #155d7d;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 2;
+
+  box-shadow:
+    0 3px 3px rgba(0, 0, 0, 0.12);
+}
+
+
+/* AVAILABLE */
+
+.seat.available:hover {
+  transform: translateY(-3px);
+}
+
+.seat.available .seat-back {
+  background: #b9dce9;
+  border-color: #79b7ce;
+}
+
+.seat.available .seat-cushion {
+  background: #d9eef8;
+  border-color: #79b7ce;
+  color: #17658c;
+}
+
+
+/* SELECTED */
+
+.seat.selected {
+  transform: translateY(-3px);
+}
+
+.seat.selected .seat-back {
+  background: #55b7e6;
+  border-color: #2187b7;
+}
+
+.seat.selected .seat-cushion {
+  background: #2d9cdb;
+  border-color: #176fa3;
+  color: white;
+}
+
+
+/* BOOKED */
+
+.seat.booked {
+  cursor: not-allowed;
+}
+
+.seat.booked .seat-back {
+  background: #e58a8a;
+  border-color: #c94c4c;
+}
+
+.seat.booked .seat-cushion {
+  background: #e65c5c;
+  border-color: #c53f3f;
+  color: white;
+}
+
+
+/* BOYS DIVIDER */
+
+.gender-divider {
+  border-top: 2px dashed #9aaab4;
+
+  margin: 22px 0;
+
+  text-align: center;
+}
+
+.gender-divider span {
+  position: relative;
+
+  top: -10px;
+
+  background: white;
+
+  padding: 0 15px;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  color: #527083;
+}
+
+
+/* LAST ROW */
+
+.last-row-title {
+  text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  color: #607986;
+}
+
+.last-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 5px;
+}
+
+.last-row .seat {
+  height: 62px;
+}
+
+
+/* BACK */
+
+.back-area {
+  margin-top: 18px;
+
+  padding: 10px;
+
+  text-align: center;
+
+  background: #eef2f5;
+
+  border-radius: 10px;
+
+  color: #81919c;
+
+  font-size: 11px;
+}
+
+
+/* LEGEND */
+
+.legend {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+}
+
+.legend div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 13px;
+}
+
+.legend-box {
+  width: 16px;
+  height: 16px;
+
+  border-radius: 4px;
+}
+
+.legend-box.available {
+  background: #d9eef8;
+  border: 1px solid #8ac7e2;
+}
+
+.legend-box.selected {
+  background: #2d9cdb;
+}
+
+.legend-box.booked {
+  background: #e65c5c;
+}
+
+
+/* BOOKING PANEL */
+
+.booking-panel {
+  width: 300px;
+
+  height: fit-content;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.booking-panel h2 {
+  margin-top: 0;
+}
+
+.trip-card {
+  padding: 15px;
+
+  background: #eaf4f9;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.trip-card strong {
+  font-size: 24px;
+}
+
+.trip-details p {
+  line-height: 1.5;
+
+  color: #536675;
+}
+
+.booking-panel hr {
+  border: none;
+
+  border-top: 1px solid #ddd;
+
+  margin: 20px 0;
+}
+
+.selected-display {
+  padding: 18px;
+
+  background: #f2f6f8;
+
+  border: 2px dashed #8ba2b2;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+.reserve-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #103f59;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.reserve-button:disabled {
+  background: #aab7bf;
+
+  cursor: not-allowed;
+}
+
+.confirmation {
+  padding: 12px;
+
+  background: #e2f5e8;
+
+  color: #257342;
+
+  border-radius: 8px;
+
+  margin-bottom: 15px;
+
+  font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-panel {
+    width: 650px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .bus {
+    width: 95vw;
+    padding: 20px 12px;
+  }
+
+  .seat-row {
+    grid-template-columns:
+      2fr
+      35px
+      3fr;
+  }
+
+  .pathway {
+    height: 55px;
+  }
+
+  .seat {
+    height: 55px;
+  }
+
+  .seat-back {
+    height: 33px;
+  }
+
+  .seat-cushion {
+    height: 23px;
+    font-size: 7px;
+  }
+}
