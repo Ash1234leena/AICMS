@@ -1,0 +1,525 @@
+.admin-page {
+  min-height: 100vh;
+  padding: 35px;
+  color: white;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(168, 85, 247, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #07020d,
+      #130522,
+      #08030f
+    );
+  font-family: Arial, sans-serif;
+}
+
+
+/* HEADER */
+
+.admin-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-small-title {
+  margin: 0 0 6px;
+
+  color: #a855f7;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.admin-header h1 {
+  margin: 0;
+
+  font-size: 32px;
+}
+
+.admin-subtitle {
+  margin: 8px 0 0;
+
+  color: #91879b;
+
+  font-size: 13px;
+}
+
+.admin-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 15px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #c9c1d0;
+
+  font-size: 12px;
+}
+
+.admin-status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 8px #22c55e;
+}
+
+
+/* COMMON */
+
+.trip-section,
+.route-management,
+.admin-info {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(15px);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #a855f7;
+
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.section-heading h2,
+.route-management-header h2 {
+  margin: 0;
+
+  font-size: 21px;
+}
+
+.route-count {
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
+}
+
+.route-count strong {
+  color: #a855f7;
+
+  font-size: 24px;
+}
+
+.route-count span {
+  color: #82788d;
+
+  font-size: 10px;
+}
+
+
+/* TRIPS */
+
+.trip-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.trip-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 75px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: white;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition: 0.25s;
+}
+
+.trip-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+
+  transform: translateY(-2px);
+}
+
+.trip-card.active {
+  border-color: rgba(168, 85, 247, 0.8);
+
+  background: rgba(168, 85, 247, 0.13);
+
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+.trip-icon {
+  font-size: 24px;
+}
+
+.trip-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  flex: 1;
+}
+
+.trip-info strong {
+  font-size: 14px;
+}
+
+.trip-info small {
+  color: #81778b;
+
+  font-size: 9px;
+}
+
+.trip-active-count {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.15);
+
+  color: #22c55e;
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+/* ROUTE MANAGEMENT */
+
+.route-management-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.route-management-header p {
+  margin: 7px 0 0;
+
+  color: #82788d;
+
+  font-size: 11px;
+}
+
+.bulk-actions {
+  display: flex;
+
+  gap: 8px;
+}
+
+.bulk-actions button {
+  padding: 9px 13px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.enable-all {
+  border: 1px solid rgba(34, 197, 94, 0.3);
+
+  background: rgba(34, 197, 94, 0.08);
+
+  color: #4ade80;
+}
+
+.disable-all {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #f87171;
+}
+
+
+/* ROUTES */
+
+.route-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.route-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(34, 197, 94, 0.2);
+
+  background: rgba(34, 197, 94, 0.04);
+
+  transition: 0.2s;
+}
+
+.route-card.disabled {
+  border-color: rgba(255, 255, 255, 0.06);
+
+  background: rgba(255, 255, 255, 0.02);
+
+  opacity: 0.55;
+}
+
+.route-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(168, 85, 247, 0.12);
+
+  font-size: 17px;
+}
+
+.route-details {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.route-details strong {
+  font-size: 12px;
+}
+
+.route-details span {
+  color: #22c55e;
+
+  font-size: 9px;
+}
+
+.route-card.disabled .route-details span {
+  color: #77707e;
+}
+
+
+/* TOGGLE */
+
+.route-toggle {
+  width: 38px;
+  height: 21px;
+
+  padding: 2px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: #39323f;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.route-toggle span {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  background: #aaa;
+
+  transition: 0.2s;
+}
+
+.route-toggle.on {
+  background: #7c3aed;
+}
+
+.route-toggle.on span {
+  transform: translateX(17px);
+
+  background: white;
+}
+
+
+/* INFO */
+
+.admin-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.info-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.info-box > span {
+  font-size: 22px;
+}
+
+.info-box strong {
+  display: block;
+
+  font-size: 11px;
+}
+
+.info-box p {
+  margin: 4px 0 0;
+
+  color: #7e7488;
+
+  font-size: 9px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .trip-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .route-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .admin-info {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .admin-page {
+    padding: 18px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .trip-grid,
+  .route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-management-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .bulk-actions {
+    width: 100%;
+  }
+
+  .bulk-actions button {
+    flex: 1;
+  }
+}

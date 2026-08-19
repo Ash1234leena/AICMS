@@ -1,11 +1,83 @@
 import { useState } from "react";
 import SeatReservation from "../SeatReservation";
+import StudentMap from "./StudentMap";
 import "./StudentDashboard.css";
 
 function StudentDashboard() {
   const [activePage, setActivePage] = useState("dashboard");
 
-  // Open Seat Reservation
+  // =========================
+  // LIVE TRACKING PAGE
+  // =========================
+  if (activePage === "tracking") {
+    return (
+      <div className="student-layout">
+
+        <aside className="sidebar">
+
+          <div className="brand">
+            <div className="brand-icon">🚌</div>
+
+            <div>
+              <h1>SmartBus</h1>
+              <p>STUDENT</p>
+            </div>
+          </div>
+
+          <nav>
+
+            <button
+              className="menu-item"
+              onClick={() => setActivePage("dashboard")}
+            >
+              🏠 <span>Dashboard</span>
+            </button>
+
+            <button className="menu-item">
+              🚌 <span>My Bus</span>
+            </button>
+
+            <button className="menu-item active">
+              📍 <span>Live Tracking</span>
+            </button>
+
+            <button
+              className="menu-item"
+              onClick={() => setActivePage("seat")}
+            >
+              💺 <span>Seat Reservation</span>
+            </button>
+
+            <button className="menu-item">
+              👥 <span>Queue Status</span>
+            </button>
+
+            <button className="menu-item">
+              🔔 <span>Notifications</span>
+            </button>
+
+            <button className="menu-item">
+              🔄 <span>Alternate Bus</span>
+            </button>
+
+          </nav>
+
+        </aside>
+
+        <main className="main-content">
+
+          <StudentMap />
+
+        </main>
+
+      </div>
+    );
+  }
+
+
+  // =========================
+  // SEAT RESERVATION PAGE
+  // =========================
   if (activePage === "seat") {
     return (
       <div className="student-layout">
@@ -34,7 +106,10 @@ function StudentDashboard() {
               🚌 <span>My Bus</span>
             </button>
 
-            <button className="menu-item">
+            <button
+              className="menu-item"
+              onClick={() => setActivePage("tracking")}
+            >
               📍 <span>Live Tracking</span>
             </button>
 
@@ -78,7 +153,10 @@ function StudentDashboard() {
     );
   }
 
-  // DASHBOARD
+
+  // =========================
+  // MAIN DASHBOARD
+  // =========================
   return (
     <div className="student-layout">
 
@@ -102,6 +180,8 @@ function StudentDashboard() {
 
         <nav>
 
+          {/* Dashboard */}
+
           <button
             className="menu-item active"
             onClick={() => setActivePage("dashboard")}
@@ -111,17 +191,26 @@ function StudentDashboard() {
           </button>
 
 
+          {/* My Bus */}
+
           <button className="menu-item">
             🚌
             <span>My Bus</span>
           </button>
 
 
-          <button className="menu-item">
+          {/* Live Tracking */}
+
+          <button
+            className="menu-item"
+            onClick={() => setActivePage("tracking")}
+          >
             📍
             <span>Live Tracking</span>
           </button>
 
+
+          {/* Seat Reservation */}
 
           <button
             className="menu-item"
@@ -132,17 +221,23 @@ function StudentDashboard() {
           </button>
 
 
+          {/* Queue Status */}
+
           <button className="menu-item">
             👥
             <span>Queue Status</span>
           </button>
 
 
+          {/* Notifications */}
+
           <button className="menu-item">
             🔔
             <span>Notifications</span>
           </button>
 
+
+          {/* Alternate Bus */}
 
           <button className="menu-item">
             🔄
@@ -161,6 +256,7 @@ function StudentDashboard() {
         <div className="dashboard-header">
 
           <div>
+
             <p className="small-heading">
               STUDENT DASHBOARD
             </p>
@@ -172,6 +268,7 @@ function StudentDashboard() {
             <p className="subtitle">
               Manage your college transportation
             </p>
+
           </div>
 
         </div>
@@ -192,6 +289,7 @@ function StudentDashboard() {
           <div className="bus-route">
 
             <div>
+
               <span className="route-dot"></span>
 
               <p>College</p>
@@ -199,6 +297,7 @@ function StudentDashboard() {
               <small>
                 Departure · 5:30 PM
               </small>
+
             </div>
 
 
@@ -210,6 +309,7 @@ function StudentDashboard() {
 
 
             <div>
+
               <span className="route-dot"></span>
 
               <p>Campus</p>
@@ -217,12 +317,18 @@ function StudentDashboard() {
               <small>
                 ETA · 5:55 PM
               </small>
+
             </div>
 
           </div>
 
 
-          <button className="track-button">
+          {/* TRACK BUTTON */}
+
+          <button
+            className="track-button"
+            onClick={() => setActivePage("tracking")}
+          >
             📍 Track Bus Live
           </button>
 
@@ -245,6 +351,8 @@ function StudentDashboard() {
           <div className="quick-grid">
 
 
+            {/* RESERVE SEAT */}
+
             <button
               className="quick-card"
               onClick={() => setActivePage("seat")}
@@ -265,7 +373,12 @@ function StudentDashboard() {
             </button>
 
 
-            <button className="quick-card">
+            {/* TRACK BUS */}
+
+            <button
+              className="quick-card"
+              onClick={() => setActivePage("tracking")}
+            >
 
               <div className="quick-icon">
                 📍
@@ -281,6 +394,8 @@ function StudentDashboard() {
 
             </button>
 
+
+            {/* QUEUE STATUS */}
 
             <button className="quick-card">
 
@@ -298,6 +413,8 @@ function StudentDashboard() {
 
             </button>
 
+
+            {/* ALTERNATE BUS */}
 
             <button className="quick-card">
 

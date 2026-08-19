@@ -7,12 +7,16 @@ import StudentDashboard from "../student/StudentDashboard";
 import AdminDashboard from "../admin/AdminDashboard";
 
 function Login() {
-  const [role, setRole] = useState("student");
+  const [role, setRole] = useState(
+    localStorage.getItem("smartbusRole") || "student"
+  );
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("smartbusLoggedIn") === "true"
+  );
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,9 +26,15 @@ function Login() {
       return;
     }
 
+    // Save login information
+    localStorage.setItem("smartbusLoggedIn", "true");
+    localStorage.setItem("smartbusRole", role);
+    localStorage.setItem("smartbusEmail", email);
+
     setLoggedIn(true);
   };
 
+  // Show dashboard after login
   if (loggedIn) {
     if (role === "student") {
       return <StudentDashboard />;
@@ -37,31 +47,23 @@ function Login() {
     <div className="login-page">
 
       {/* Background glow */}
-
       <div className="glow glow-one"></div>
       <div className="glow glow-two"></div>
       <div className="glow glow-three"></div>
 
-
       {/* LOGIN CARD */}
-
       <div className="login-card">
 
         {/* COLLEGE LOGO */}
-
         <div className="college-logo-container">
-
           <img
             src={collegeLogo}
             alt="Rajalakshmi Engineering College"
             className="college-logo"
           />
-
         </div>
 
-
         {/* SMARTBUS BRAND */}
-
         <div className="smartbus-brand">
 
           <div className="bus-logo">
@@ -78,14 +80,10 @@ function Login() {
 
         </div>
 
-
         {/* DIVIDER */}
-
         <div className="login-divider"></div>
 
-
         {/* HEADING */}
-
         <div className="login-heading">
 
           <h2>Welcome Back</h2>
@@ -96,9 +94,7 @@ function Login() {
 
         </div>
 
-
         {/* ROLE SELECTION */}
-
         <div className="role-section">
 
           <label>
@@ -107,6 +103,7 @@ function Login() {
 
           <div className="role-buttons">
 
+            {/* STUDENT */}
             <button
               type="button"
               className={
@@ -116,7 +113,6 @@ function Login() {
               }
               onClick={() => setRole("student")}
             >
-
               <span className="role-icon">
                 🎓
               </span>
@@ -124,10 +120,9 @@ function Login() {
               <span>
                 Student
               </span>
-
             </button>
 
-
+            {/* ADMIN */}
             <button
               type="button"
               className={
@@ -137,7 +132,6 @@ function Login() {
               }
               onClick={() => setRole("admin")}
             >
-
               <span className="role-icon">
                 🛡️
               </span>
@@ -145,18 +139,15 @@ function Login() {
               <span>
                 Admin
               </span>
-
             </button>
 
           </div>
-
         </div>
 
-
-        {/* EMAIL */}
-
+        {/* LOGIN FORM */}
         <form onSubmit={handleLogin}>
 
+          {/* EMAIL */}
           <div className="input-group">
 
             <label>
@@ -173,18 +164,13 @@ function Login() {
                 type="email"
                 placeholder="Enter your college email"
                 value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
+                onChange={(e) => setEmail(e.target.value)}
               />
 
             </div>
-
           </div>
 
-
           {/* PASSWORD */}
-
           <div className="input-group">
 
             <label>
@@ -201,18 +187,13 @@ function Login() {
                 type="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) =>
-                  setPassword(e.target.value)
-                }
+                onChange={(e) => setPassword(e.target.value)}
               />
 
             </div>
-
           </div>
 
-
           {/* LOGIN BUTTON */}
-
           <button
             type="submit"
             className="login-button"
@@ -233,9 +214,7 @@ function Login() {
 
         </form>
 
-
         {/* SECURITY */}
-
         <div className="security-message">
 
           <span>
@@ -248,15 +227,12 @@ function Login() {
 
         </div>
 
-
         {/* COLLEGE NAME */}
-
         <p className="college-name">
           Rajalakshmi Engineering College
         </p>
 
       </div>
-
     </div>
   );
 }

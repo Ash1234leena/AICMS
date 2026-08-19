@@ -1,0 +1,792 @@
+.student-map-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.student-map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.student-map-header h1 {
+  margin: 5px 0;
+  font-size: 32px;
+}
+
+.student-map-header .subtitle {
+  margin: 0;
+}
+
+
+/* =========================================
+   BUS STATUS
+========================================= */
+
+.bus-status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 18px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.bus-status-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  font-size: 22px;
+}
+
+.bus-status-card strong {
+  display: block;
+  font-size: 15px;
+}
+
+.bus-status-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 4px;
+
+  font-size: 12px;
+
+  opacity: 0.75;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 8px #22c55e;
+}
+
+
+/* =========================================
+   ROUTE SELECTOR
+========================================= */
+
+.route-selector-card {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 18px;
+
+  margin-bottom: 15px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+}
+
+.route-selector-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+.route-selector-icon {
+
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(124, 58, 237, 0.15);
+
+}
+
+.route-select {
+
+  min-width: 250px;
+
+  padding: 11px 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  background: rgba(0, 0, 0, 0.25);
+
+  color: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================
+   ROUTE STOPS
+========================================= */
+
+.route-stops-card {
+
+  padding: 18px;
+
+  margin-bottom: 15px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+}
+
+.route-title-row {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+}
+
+.route-title-row h2 {
+
+  margin: 3px 0 0;
+
+  font-size: 24px;
+
+}
+
+.destination-badge {
+
+  padding: 7px 11px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(124, 58, 237, 0.15);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+}
+
+.stops-list {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0;
+
+}
+
+.stop-item {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding-right: 24px;
+
+  margin-bottom: 5px;
+
+}
+
+.stop-dot {
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #7c3aed;
+
+  flex-shrink: 0;
+
+}
+
+.first-stop {
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 8px #22c55e;
+
+}
+
+.stop-name {
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+}
+
+.stop-line {
+
+  position: absolute;
+
+  right: 8px;
+
+  width: 16px;
+
+  height: 2px;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-card {
+
+  width: 100%;
+
+  height: 540px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #e5e7eb;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+
+}
+
+.student-map {
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+.leaflet-container {
+
+  width: 100%;
+
+  height: 100%;
+
+  font-family: inherit;
+
+}
+
+
+/* =========================================
+   MARKERS
+========================================= */
+
+.smartbus-marker {
+
+  background: transparent;
+
+  border: none;
+
+}
+
+
+/* BUS */
+
+.bus-marker-wrapper {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+}
+
+.bus-marker {
+
+  width: 46px;
+
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  border: 3px solid #7c3aed;
+
+  font-size: 24px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.3);
+
+  animation: busPulse 2s infinite;
+
+}
+
+
+/* LABEL */
+
+.marker-label {
+
+  padding: 4px 9px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.bus-label {
+
+  background: #7c3aed;
+
+  color: white;
+
+}
+
+
+/* USER */
+
+.user-marker-wrapper {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.user-label {
+
+  background: #2563eb;
+
+  color: white;
+
+  margin-bottom: 4px;
+
+}
+
+.user-marker {
+
+  width: 28px;
+
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.2);
+
+  border: 2px solid #2563eb;
+
+  animation: userPulse 2s infinite;
+
+}
+
+.user-dot {
+
+  width: 12px;
+
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  border: 2px solid white;
+
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes busPulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(124, 58, 237, 0.45);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 13px rgba(124, 58, 237, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(124, 58, 237, 0);
+  }
+
+}
+
+@keyframes userPulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 12px rgba(37, 99, 235, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(37, 99, 235, 0);
+  }
+
+}
+
+
+/* =========================================
+   RECENTER
+========================================= */
+
+.recenter-button {
+
+  position: absolute;
+
+  right: 15px;
+
+  bottom: 20px;
+
+  z-index: 1000;
+
+  width: 44px;
+
+  height: 44px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: white;
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================
+   INFORMATION CARDS
+========================================= */
+
+.bus-info-card {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 18px;
+
+}
+
+.bus-info-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+}
+
+.info-icon {
+
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+}
+
+.info-label {
+
+  display: block;
+
+  font-size: 10px;
+
+  opacity: 0.55;
+
+  margin-bottom: 3px;
+
+}
+
+.bus-info-item strong {
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   LIVE UPDATE
+========================================= */
+
+.live-update {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  font-size: 12px;
+
+  opacity: 0.55;
+
+}
+
+.live-indicator {
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 7px #22c55e;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .bus-info-card {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .student-map-header {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+  }
+
+  .bus-status-card {
+
+    width: 100%;
+
+  }
+
+  .route-selector-card {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  .route-select {
+
+    width: 100%;
+
+    min-width: 0;
+
+  }
+
+  .map-card {
+
+    height: 450px;
+
+    border-radius: 18px;
+
+  }
+
+  .route-title-row {
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+  }
+
+  .stops-list {
+
+    display: block;
+
+  }
+
+  .stop-item {
+
+    margin-bottom: 10px;
+
+  }
+
+  .stop-line {
+
+    display: none;
+
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .map-card {
+
+    height: 380px;
+
+    border-radius: 15px;
+
+  }
+
+  .student-map-header h1 {
+
+    font-size: 25px;
+
+  }
+
+  .bus-info-card {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .route-title-row {
+
+    flex-direction: column;
+
+  }
+
+}
