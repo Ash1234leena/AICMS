@@ -1,0 +1,346 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* =========================
+   STUDENT SETUP
+========================= */
+
+.setup-container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.setup-container h1 {
+    font-size: 32px;
+    color: #382e6a;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: #777;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+.setup-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.setup-card h2 {
+    color: #382e6a;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #6d5bd0;
+}
+
+#startButton {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #6d5bd0;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#startButton:hover {
+    background: #382e6a;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.welcome-small {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.dashboard-header h1 {
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: 0;
+}
+
+.dashboard-subtitle {
+    color: #777;
+    margin-top: 6px;
+}
+
+
+/* BUS CARD */
+
+.bus-card {
+    background: #382e6a;
+    color: white;
+    padding: 22px;
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.bus-card h2 {
+    margin-top: 6px;
+}
+
+.live-status {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #4caf50;
+    border-radius: 50%;
+}
+
+
+/* LOCATION */
+
+.location-card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    font-size: 28px;
+}
+
+.card-label {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.location-card h3 {
+    color: #333;
+}
+
+
+/* INFO GRID */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-icon {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.info-card h2 {
+    color: #382e6a;
+    margin-bottom: 5px;
+}
+
+.info-description {
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* STOP */
+
+.stop-card {
+    background: white;
+    padding: 18px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stop-icon {
+    font-size: 28px;
+}
+
+
+/* MAP */
+
+.map-section {
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.map-title {
+    margin-bottom: 12px;
+}
+
+.map-title h3 {
+    color: #382e6a;
+}
+
+.map-title p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .app {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .dashboard {
+        padding-top: 10px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .bus-card {
+        padding: 18px;
+    }
+
+    .bus-card h2 {
+        font-size: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-placeholder {
+        height: 220px;
+    }
+}

@@ -1,13 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartBus</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+
+    <div class="app">
+
+        <div class="setup-container">
+
+            <div class="logo">
+                🚌
+            </div>
+
+            <h1>SMARTBUS</h1>
+
+            <p class="subtitle">
+                Your campus, your ride
+            </p>
+
+            <div class="setup-card">
+
+                <h2>Student Setup</h2>
+
+                <p class="description">
+                    Enter your details to start tracking your bus.
+                </p>
+
+                <form id="setupForm">
+
+                    <div class="input-group">
+                        <label for="studentName">Your Name</label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="busNumber">Bus Number</label>
+
+                        <input
+                            type="text"
+                            id="busNumber"
+                            placeholder="Example: REC-42"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="busStop">Your Stop</label>
+
+                        <select id="busStop" required>
+
+                            <option value="">
+                                Select your stop
+                            </option>
+
+                            <option value="Avadi">
+                                📍 Avadi
+                            </option>
+
+                            <option value="Ramamurthy Nagar">
+                                📍 Ramamurthy Nagar
+                            </option>
+
+                            <option value="Tambaram">
+                                📍 Tambaram
+                            </option>
+
+                            <option value="Poonamallee">
+                                📍 Poonamallee
+                            </option>
+
+                        </select>
+                    </div>
+
+                    <button type="submit" id="startButton">
+                        START TRACKING
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+</body>
 </html>
